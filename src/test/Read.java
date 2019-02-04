@@ -15,16 +15,25 @@ public class Read {
 		Workbook wb= Workbook.getWorkbook(f);
 		Sheet ws= wb.getSheet(0);
 		int r= ws.getRows();
+		System.out.println("Row no"+r);
 		int c= ws.getColumns();
-		for(int i=0; i<=r; i++)
-
+		//System.out.println("Column"+c);
+		try {
+		for(int i=1; i<=r; i++)
 		{
-			for(int j=0; j<=c; j++)
+			for(int j=0; j<=i; j++)
 			{
 				Cell c1= ws.getCell(j,i);
 				System.out.println(c1.getContents());
 			}
+			System.out.println();
+		}
+		}
+		catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 
 }
+
+
